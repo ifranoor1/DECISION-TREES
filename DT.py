@@ -54,3 +54,7 @@ plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix')
 plt.show()
+from sklearn.metrics import classification_report
+report = classification_report(y_test, y_pred,
+target_names=iris.target_names)
+print("Classification Report:\n", report)
