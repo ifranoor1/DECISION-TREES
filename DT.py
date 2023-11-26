@@ -22,6 +22,10 @@ rel_feature_heatmap=rel_feature[['sepal length (cm)',
 'Target'   ]]
 corr_rel_feature= rel_feature_heatmap.corr()
 print(corr_rel_feature)
+from sklearn.metrics import classification_report
+report = classification_report(y_test, y_pred,
+target_names=iris.target_names)
+print("Classification Report:\n", report)
 #x is the feature variable
 X=iris_df['petal length (cm)']
 #y is the dependent or target variable
