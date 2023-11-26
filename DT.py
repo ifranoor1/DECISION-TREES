@@ -22,3 +22,12 @@ rel_feature_heatmap=rel_feature[['sepal length (cm)',
 'Target'   ]]
 corr_rel_feature= rel_feature_heatmap.corr()
 print(corr_rel_feature)
+#x is the feature variable
+X=iris_df['petal length (cm)']
+#y is the dependent or target variable
+y=iris_df['Target']
+X=np.array(X).reshape(-1,1)
+y=np.array(y).reshape(-1,1)
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y,
+test_size=0.3, random_state=42)
