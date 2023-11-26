@@ -39,3 +39,18 @@ clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy:", accuracy)
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Make predictions on the test set
+y_pred = clf.predict(X_test)
+# Create a confusion matrix
+conf_matrix = confusion_matrix(y_test, y_pred)
+# Visualize the confusion matrix as a heatmap
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix, annot=True, fmt="d", cmap="Blues",
+xticklabels=iris.target_names, yticklabels=iris.target_names)
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix')
+plt.show()
